@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/Android_Studio_WorkSpace/CMBL/MyWidget/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="black">#000000</color>
+    <color name="gray">#666666</color>
+    <color name="white">#ffffff</color>
+    <color name="white_70">#B3ffffff</color>
+    <declare-styleable name="NumberPicker"><attr format="color" name="normalTextColor"/><attr format="dimension" name="normalTextSize"/><attr format="color" name="selecredTextColor"/><attr format="dimension" name="selecredTextSize"/><attr format="dimension" name="unitHight"/><attr format="integer" name="itemNumber"/><attr format="color" name="lineColor"/><attr format="dimension" name="maskHight"/><attr format="boolean" name="noEmpty"/><attr format="boolean" name="isEnable"/></declare-styleable>
+    <declare-styleable name="PullToZoomView"><attr format="reference" name="headerView"/><attr format="reference" name="contentView"/><attr format="reference" name="zoomView"/><attr format="boolean" name="isHeaderParallax"/></declare-styleable>
+    <declare-styleable name="RoundProgressBar"><attr format="color" name="roundColor"/><attr format="color" name="roundProgressColor"/><attr format="dimension" name="roundWidth"/><attr format="color" name="textColor"/><attr format="dimension" name="textSize"/><attr format="integer" name="max"/><attr format="boolean" name="textIsDisplayable"/><attr name="style"><enum name="STROKE" value="0"/><enum name="FILL" value="1"/></attr></declare-styleable>
+    <declare-styleable name="roundedimageview"><attr format="dimension" name="border_thickness"/><attr format="color" name="border_inside_color"/><attr format="color" name="border_outside_color"/></declare-styleable>
+    <!-- From: file:/E:/Android_Studio_WorkSpace/CMBL/MyWidget/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="view_padding">6dp</dimen>
+    <dimen name="view_small_padding">1dp</dimen>
+    <!-- From: file:/E:/Android_Studio_WorkSpace/CMBL/MyWidget/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">MyWidget</string>
+    <!-- From: file:/E:/Android_Studio_WorkSpace/CMBL/MyWidget/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

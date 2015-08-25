@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_grey"
+    android:paddingTop="15dp"
+    android:gravity="center_horizontal"
+    android:text="其他城市正在陆续开通中，敬请期待"
+    android:textColor="@color/color_homepage_text"
+    android:textSize="13sp" />

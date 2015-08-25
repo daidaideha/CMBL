@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保养红包"
+        android:layout_marginLeft="@dimen/message_tab_padding_left_right"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="@dimen/message_tab_padding_left_right"
+        android:textSize="15sp"
+        android:textColor="@color/color_header_title"
+        android:drawableRight="@drawable/arrow"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2015-08-24 11:30"
+        android:layout_marginLeft="@dimen/message_tab_padding_left_right"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/message_tab_padding_left_right"
+        android:textSize="11sp"
+        android:textColor="@color/color_homepage_text"/>
+
+    <TextView
+        android:id="@+id/tv_context"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保养红包保养红包保养红包保养红包保养红包保养红包保养红包保养红包保养红包保养红包保养红包保养红包保养红包保养红包"
+        android:layout_marginLeft="@dimen/message_tab_padding_left_right"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="@dimen/message_tab_padding_left_right"
+        android:textSize="13sp"
+        android:textColor="@color/color_homepage_text"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:lineSpacingExtra="4dp"
+        android:paddingBottom="15dp"/>
+
+</LinearLayout>

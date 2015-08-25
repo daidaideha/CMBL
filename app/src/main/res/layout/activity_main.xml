@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <fragment
+        android:id="@+id/cycleviewapger"
+        android:name="com.witalk.widget.cycleviewpager.CycleViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/cycleviewapger">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:gravity="center_horizontal"
+            android:textColor="@color/button_text"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:textColor="@color/button_text"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:textColor="@color/button_text"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/context"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_tab"
+        android:layout_marginTop="10dp"
+        android:text="defalut"/>
+
+    <com.witalk.widget.ScrollerNumberPicker
+        android:id="@+id/numberpicker"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/context" />
+
+    <com.witalk.widget.PullToRefreshView
+        android:id="@+id/pulltorefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!--<ScrollView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="5464674"/>-->
+
+            <!--</ScrollView>-->
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:background="@android:color/white"/>
+    </com.witalk.widget.PullToRefreshView>
+
+</RelativeLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_header_hegiht"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/rl_header_person"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:src="@drawable/my"
+                android:layout_marginLeft="15dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="@color/color_header_title"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:drawableLeft="@drawable/position"
+            android:text="杭州"
+            android:gravity="center_vertical"
+            android:paddingRight="15dp"
+            android:drawablePadding="6dp"
+            android:textColor="@color/color_header_title" />
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/cycleviewapger"
+        android:name="com.witalk.widget.cycleviewpager.CycleViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="320dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/maintain">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/order"
+                android:text="订单"
+                android:textSize="12sp"
+                android:textColor="@color/color_homepage_text"
+                android:gravity="center"
+                android:drawablePadding="1dp"/>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/maintain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/maintain"
+        android:layout_centerInParent="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/maintain_icon"
+            android:text="保养"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:drawablePadding="5dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/maintain">
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/message"
+                android:text="消息"
+                android:textSize="12sp"
+                android:textColor="@color/color_homepage_text"
+                android:gravity="center"
+                android:drawablePadding="1dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

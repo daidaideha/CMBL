@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jeremyfeinstein.slidingmenu.lib.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sliding="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/menu"
+
+    sliding:viewAbove="@layout/layout_home_content"
+    sliding:behindOffset="@dimen/slidingmenu_offset"
+    sliding:behindScrollScale="1"
+    sliding:fadeDegree="0.3"
+    sliding:fadeEnabled="true"
+    sliding:touchModeAbove="fullscreen"
+    android:background="@color/white" />
