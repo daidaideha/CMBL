@@ -14,6 +14,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.witalk.widget.cycleviewpager.ADInfo;
 import com.witalk.widget.cycleviewpager.CycleViewPager;
 import com.wk.cmbl.R;
+import com.wk.cmbl.activity.addcar.AddCarActivity;
 import com.wk.cmbl.widget.ViewFactory;
 
 import org.kymjs.kjframe.KJActivity;
@@ -45,6 +46,8 @@ public class HomePageActivity extends KJActivity {
     private CycleViewPager cycleViewPager;
     @BindView(id = R.id.tv_message, click = true)
     private TextView tvMessage;
+    @BindView(id = R.id.maintain, click = true)
+    private RelativeLayout rlMaintain;
 
     private String[] imageUrls = {
             "http://d.hiphotos.baidu.com/image/w%3D400/sign=8d6ddf17bb389b5038ffe152b534e5f1/6d81800a19d8bc3e0a89c3c3808ba61ea8d34532.jpg",
@@ -97,6 +100,9 @@ public class HomePageActivity extends KJActivity {
             case R.id.tv_message:
                 showActivity(this, MessageActivity.class);
                 break;
+            case R.id.maintain:
+                showActivity(this, AddCarActivity.class);
+                break;
         }
     }
 
@@ -106,7 +112,8 @@ public class HomePageActivity extends KJActivity {
     }
 
     private void initSlidingMenu() {
-        slidingMenu.setMenu(R.layout.layout_home_menu);
+        View menu = getLayoutInflater().inflate(R.layout.layout_home_menu, null);
+        slidingMenu.setMenu(menu);
         slidingMenu.setShadowDrawable(R.drawable.shadow);
         slidingMenu.setShadowWidthRes(R.dimen.shadow_width);
         slidingMenu.setMode(SlidingMenu.LEFT);

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hint_choose_car">请选择您的车型</string>
+    <string name="hint_buy_date">选择购车时间</string>
+    <string name="hint_input">点击输入</string>
+    <string name="hint_car_number">填写车牌号码</string>
+    
+</resources>

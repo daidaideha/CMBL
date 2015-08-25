@@ -120,6 +120,14 @@
             android:name="com.wk.cmbl.activity.WebViewActivity"
             android:screenOrientation="portrait" />
 
+
+        <activity
+            android:name="com.wk.cmbl.activity.addcar.AddCarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wk.cmbl.activity.addcar.ChoosePlateActivity"
+            android:screenOrientation="portrait" />
+
         <meta-data
             android:name="app_key"
             android:value="witalk#witalk" />

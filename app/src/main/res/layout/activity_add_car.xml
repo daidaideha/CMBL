@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_choose_car"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white">
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/car_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp" />
+
+        <EditText
+            android:id="@+id/edt_choose_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/arrow"
+            android:drawablePadding="10dp"
+            android:hint="@string/hint_choose_car"
+            android:textColorHint="@color/color_hint"
+            android:textSize="15sp"
+            android:textColor="@color/color_header_title"
+            android:editable="false"
+            android:inputType="text"
+            android:gravity="right"
+            android:focusable="false"/>
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="@dimen/message_tab_padding_left_right"
+        android:paddingRight="@dimen/message_tab_padding_left_right">
+
+        <RelativeLayout
+            android:id="@+id/rl_date"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="购车时间"
+                android:textColor="@color/color_header_title"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:drawableRight="@drawable/arrow"
+                android:drawablePadding="10dp"
+                android:hint="@string/hint_buy_date"
+                android:textColorHint="@color/color_hint"
+                android:textSize="15sp"
+                android:textColor="@color/color_header_title"
+                android:editable="false"
+                android:inputType="text"
+                android:gravity="right"
+                android:focusable="false" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_line"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="行驶里程"
+                android:textColor="@color/color_header_title"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edt_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:drawablePadding="10dp"
+                android:hint="@string/hint_input"
+                android:textColorHint="@color/color_hint"
+                android:textSize="15sp"
+                android:textColor="@color/color_header_title"
+                android:inputType="text"
+                android:layout_toLeftOf="@+id/tv_distance"
+                android:layout_marginRight="8dp"
+                android:gravity="right" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="公里"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_header_title"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_line"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="车牌号码"
+                android:textColor="@color/color_header_title"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edt_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:layout_alignParentRight="true"
+                android:drawablePadding="10dp"
+                android:hint="@string/hint_car_number"
+                android:textColorHint="@color/color_hint"
+                android:textSize="15sp"
+                android:textColor="@color/color_header_title"
+                android:inputType="text"
+                android:gravity="right"
+                android:maxLength="5" />
+
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/edt_number"
+                android:text="浙A"
+                android:drawableRight="@drawable/sanjiao"
+                android:drawablePadding="6dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_header_title"
+                android:textSize="15sp"
+                android:layout_marginRight="8dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/message_tab_padding_left_right"
+        android:layout_marginRight="@dimen/message_tab_padding_left_right"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_orange"
+        android:textColor="@color/white"
+        android:text="@string/btn_save"
+        android:textSize="20sp"/>
+
+</LinearLayout>

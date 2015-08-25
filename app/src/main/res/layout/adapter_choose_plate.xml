@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:id="@+id/tv_plate"
+    android:gravity="center"
+    android:text="浙（浙江）"
+    android:textSize="15sp"
+    android:textColor="@color/color_header_title"/>
