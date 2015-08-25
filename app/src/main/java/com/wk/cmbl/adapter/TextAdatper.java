@@ -2,7 +2,7 @@ package com.wk.cmbl.adapter;
 
 import android.widget.AbsListView;
 
-import com.wk.cmbl.model.TextModel;
+import com.wk.cmbl.model.TextUnit;
 
 import org.kymjs.kjframe.widget.AdapterHolder;
 import org.kymjs.kjframe.widget.KJAdapter;
@@ -14,12 +14,12 @@ import java.util.Collection;
  */
 public class TextAdatper extends KJAdapter {
 
-    public TextAdatper(AbsListView view, Collection<TextModel> mDatas, int layout) {
+    public TextAdatper(AbsListView view, Collection<TextUnit> mDatas, int layout) {
         super(view, mDatas, layout);
     }
 
     @Override
     public void convert(AdapterHolder helper, Object item, boolean isScrolling) {
-        helper.setText(((TextModel)item).getId(), ((TextModel)item).getContext());
+        helper.setText(((TextUnit)item).getId(), ((TextUnit)item).getContext());
     }
 }

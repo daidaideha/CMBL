@@ -7,14 +7,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.wk.cmbl.R;
 import com.wk.cmbl.adapter.TextAdatper;
 import com.wk.cmbl.base.BaseActivity;
-import com.wk.cmbl.model.TextModel;
+import com.wk.cmbl.model.TextUnit;
 
 import org.kymjs.kjframe.ui.BindView;
-import org.kymjs.kjframe.utils.KJLoger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,9 +60,9 @@ public class ChoosePlateActivity extends BaseActivity implements AdapterView.OnI
     }
 
     private void initGridView() {
-        List<TextModel> list = new ArrayList<>();
+        List<TextUnit> list = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            TextModel model = new TextModel();
+            TextUnit model = new TextUnit();
             model.setId(R.id.tv_plate);
             model.setContext("浙（浙江）");
             list.add(model);
@@ -75,9 +73,9 @@ public class ChoosePlateActivity extends BaseActivity implements AdapterView.OnI
     }
 
     private void initLetter() {
-        List<TextModel> list = new ArrayList<>();
+        List<TextUnit> list = new ArrayList<>();
         for (int i = 0; i < 26; i++) {
-            TextModel model = new TextModel();
+            TextUnit model = new TextUnit();
             model.setId(R.id.tv_plate);
             model.setContext((char)(65 + i) + "");
             list.add(model);
@@ -87,7 +85,7 @@ public class ChoosePlateActivity extends BaseActivity implements AdapterView.OnI
         LetterGV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                plate += ((TextModel) letterAdatper.getItem(position)).getContext();
+                plate += ((TextUnit) letterAdatper.getItem(position)).getContext();
                 Intent intent = new Intent();
                 intent.putExtra("plate", plate);
                 setResult(1, intent);
@@ -99,6 +97,6 @@ public class ChoosePlateActivity extends BaseActivity implements AdapterView.OnI
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         drawer.openDrawer(Gravity.RIGHT);
-        plate = ((TextModel) adatper.getItem(position)).getContext().substring(0, 1);
+        plate = ((TextUnit) adatper.getItem(position)).getContext().substring(0, 1);
     }
 }

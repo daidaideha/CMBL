@@ -68,7 +68,7 @@ public class AddCarActivity extends BaseActivity {
         super.onClick(v);
         switch (v.getId()) {
             case R.id.rl_choose_car:
-
+                CMBLTools.IntentToOtherForResult(this, ChooseTypeActivity.class, null, REQUEST_CAR);
                 break;
             case R.id.rl_date:
 

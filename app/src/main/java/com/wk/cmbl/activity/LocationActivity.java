@@ -6,7 +6,7 @@ import android.widget.ListView;
 import com.wk.cmbl.R;
 import com.wk.cmbl.adapter.TextAdatper;
 import com.wk.cmbl.base.BaseActivity;
-import com.wk.cmbl.model.TextModel;
+import com.wk.cmbl.model.TextUnit;
 
 import org.kymjs.kjframe.ui.BindView;
 
@@ -49,9 +49,9 @@ public class LocationActivity extends BaseActivity {
         mListView.addFooterView(footer);
         mListView.setBackgroundColor(getResources().getColor(R.color.color_bg_grey));
 
-        List<TextModel> list = new ArrayList<>();
+        List<TextUnit> list = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            TextModel model = new TextModel();
+            TextUnit model = new TextUnit();
             model.setId(R.id.tv_location);
             model.setContext("北京");
             list.add(model);

@@ -127,6 +127,9 @@
         <activity
             android:name="com.wk.cmbl.activity.addcar.ChoosePlateActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wk.cmbl.activity.addcar.ChooseTypeActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="app_key"
