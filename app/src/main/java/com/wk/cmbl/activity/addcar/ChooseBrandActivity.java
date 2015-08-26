@@ -1,13 +1,17 @@
 package com.wk.cmbl.activity.addcar;
 
+import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.witalk.widget.CMBLTools;
 import com.wk.cmbl.R;
-import com.wk.cmbl.adapter.CarTypeAdatper;
+import com.wk.cmbl.adapter.CarBrandAdatper;
 import com.wk.cmbl.base.BaseActivity;
-import com.wk.cmbl.model.CarTypeUnit;
+import com.wk.cmbl.base.CMBLApplication;
+import com.wk.cmbl.model.CarBrandUnit;
 import com.wk.cmbl.widget.MySideBar;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -18,13 +22,19 @@ import java.util.List;
 /**
  * Created by Administrator on 2015/8/25 0025.
  */
-public class ChooseTypeActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class ChooseBrandActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     @BindView(id = R.id.listview)
     private ListView mListView;
     @BindView(id = R.id.sideBar)
     private MySideBar sideBar;
 
-    private List<CarTypeUnit> listData;
+    private List<CarBrandUnit> listData;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CMBLApplication.getInstance().removeChooseCar(this);
+    }
 
     @Override
     public void setRootView() {
@@ -43,11 +53,18 @@ public class ChooseTypeActivity extends BaseActivity implements AdapterView.OnIt
     @Override
     protected void initHeader() {
         setHeaderTitle(getString(R.string.header_choose_type));
+        setOnHeaderLeftClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(0);
+                finish();
+            }
+        });
     }
 
     @Override
-    protected void initBodyer() {;
-        CarTypeAdatper adatper = new CarTypeAdatper(this);
+    protected void initBodyer() {
+        CarBrandAdatper adatper = new CarBrandAdatper(this);
         adatper.clearList();
         adatper.addList(listData);
         sideBar.setListView(mListView);
@@ -62,7 +79,7 @@ public class ChooseTypeActivity extends BaseActivity implements AdapterView.OnIt
         super.initData();
         listData = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            CarTypeUnit unit = new CarTypeUnit();
+            CarBrandUnit unit = new CarBrandUnit();
             if (i < 5) {
                 unit.setPinyin("a");
             } else if (i < 10 && i >= 5) {
@@ -84,6 +101,24 @@ public class ChooseTypeActivity extends BaseActivity implements AdapterView.OnIt
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        setResult(1);
+        CMBLApplication.getInstance().addChooseCar(this);
+        CMBLTools.IntentToOtherForResult(this, ChooseSeriesActivity.class, null, 1);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
+            setResult(0);
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

@@ -1,6 +1,6 @@
 package com.wk.cmbl.model;
 
-public class CarTypeUnit {
+public class CarBrandUnit {
 	private String pinyin;
 	private String name;
 	private String imgRes;

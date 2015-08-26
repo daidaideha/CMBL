@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 
 import com.wk.cmbl.R;
-import com.wk.cmbl.model.CarTypeUnit;
+import com.wk.cmbl.model.CarBrandUnit;
 
 import org.kymjs.kjframe.KJBitmap;
 
@@ -22,13 +22,13 @@ import java.util.List;
 /**
  * Created by Administrator on 2015/7/15 0015.
  */
-public class CarTypeAdatper extends BaseAdapter implements SectionIndexer {
+public class CarBrandAdatper extends BaseAdapter implements SectionIndexer {
     private Context context;
     private LayoutInflater inflater;
-    private List<CarTypeUnit> listData;
+    private List<CarBrandUnit> listData;
     private KJBitmap kjBitmap;
 
-    public CarTypeAdatper(Activity context) {
+    public CarBrandAdatper(Activity context) {
         this.context = context;
         this.inflater = context.getLayoutInflater();
         listData = new ArrayList<>();
@@ -39,7 +39,7 @@ public class CarTypeAdatper extends BaseAdapter implements SectionIndexer {
         listData.clear();
     }
 
-    public void addList(List<CarTypeUnit> listData) {
+    public void addList(List<CarBrandUnit> listData) {
         this.listData.addAll(listData);
     }
 
@@ -61,7 +61,7 @@ public class CarTypeAdatper extends BaseAdapter implements SectionIndexer {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 		String nickName_abc = listData.get(position).getPinyin().toUpperCase();
-        convertView = inflater.inflate(R.layout.adapter_car_type, null);
+        convertView = inflater.inflate(R.layout.adapter_car_brand, null);
 
         View line = convertView.findViewById(R.id.line);
         ImageView iv_car = (ImageView) convertView.findViewById(R.id.iv_car);

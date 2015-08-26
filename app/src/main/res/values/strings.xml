@@ -6,6 +6,7 @@
     <string name="header_add_car">填写爱车信息</string>
     <string name="header_choose_plate">选择车牌号</string>
     <string name="header_choose_type">选择品牌</string>
+    <string name="header_choose_series">选择车系</string>
 
     <string name="dialog_btn_submit">确定</string>
     <string name="dialog_btn_cancle">取消</string>

@@ -9,14 +9,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ListView;
 
-import com.wk.cmbl.adapter.CarTypeAdatper;
+import com.wk.cmbl.adapter.CarBrandAdatper;
 
 public class MySideBar extends View {
 	private char[] l;
 	private ListView list;
 //	private TextView mDialogText;
 	private int m_nItemHeight;
-	private CarTypeAdatper adapter;
+	private CarBrandAdatper adapter;
 
 	public MySideBar(Context context) {
 		super(context);
@@ -43,7 +43,7 @@ public class MySideBar extends View {
 		list = _list;
 	}
 
-	public void setAdapter(CarTypeAdatper adapter) {
+	public void setAdapter(CarBrandAdatper adapter) {
 		this.adapter = adapter;
 	}
 
