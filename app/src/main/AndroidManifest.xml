@@ -109,16 +109,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.TestActivity"
-            android:label="@string/app_name"
-            android:configChanges="keyboard">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity
             android:name=".activity.MessageActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -140,6 +130,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.addcar.ChooseSeriesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.addcar.ChooseTypeActivity"
             android:screenOrientation="portrait" />
 
         <meta-data

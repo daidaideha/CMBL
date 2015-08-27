@@ -23,4 +23,7 @@
     <dimen name="message_tab_padding_top_bottom">7dp</dimen>
     <dimen name="message_list_divider_height">10dp</dimen>
 
+    <dimen name="wheel_item_height">35dp</dimen>
+    <dimen name="wheel_item_text">14sp</dimen>
+
 </resources>

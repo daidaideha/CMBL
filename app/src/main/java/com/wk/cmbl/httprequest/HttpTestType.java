@@ -15,17 +15,17 @@ import org.kymjs.kjframe.utils.KJLoger;
 /**
  * Created by Administrator on 2015/8/20 0020.
  */
-public class HttpTest extends HttpBodyBase {
+public class HttpTestType extends HttpBodyBase {
     private HttpThread mHttpThread;
     private String strSuccesMsg = null;
     private String strErrorMsg = null;
     private IHttpClinetListener mIHttpClinetListener;
 
-    public HttpTest(Application context) {
+    public HttpTestType(Application context, int id) {
         super(context);
         mHttpThread = new HttpThread(context);
         setAction("login");
-        setUrl("http://app.api.autohome.com.cn/autov4.8.5/cars/brands-pm2-ts635417325802968878.json");
+        setUrl("http://app.api.autohome.com.cn/autov4.8.5/cars/seriesprice-pm2-b" + id + "-t2.json");
     }
 
     @Override
@@ -49,7 +49,7 @@ public class HttpTest extends HttpBodyBase {
             String data = bundle.getString("data");
             if (mIHttpClinetListener != null)
                 mIHttpClinetListener.httpSuccessListener(data);
-            KJLoger.log(FinalValue.Http_Tag, "http for action " + HttpTest.this.getAction() + " backData ----->" + data);
+            KJLoger.log(FinalValue.Http_Tag, "http for action " + HttpTestType.this.getAction() + " backData ----->" + data);
 //            String action = bundle.getString("action");
 //            try {
 //                JSONObject jsonObject = new JSONObject(data);

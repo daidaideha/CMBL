@@ -14,7 +14,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/car_icon"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp" />
+            android:layout_marginLeft="15dp"
+            android:clickable="false"/>
 
         <EditText
             android:id="@+id/edt_choose_car"
@@ -75,7 +76,8 @@
                 android:editable="false"
                 android:inputType="text"
                 android:gravity="right"
-                android:focusable="false" />
+                android:focusable="false"
+                android:clickable="false" />
 
         </RelativeLayout>
 

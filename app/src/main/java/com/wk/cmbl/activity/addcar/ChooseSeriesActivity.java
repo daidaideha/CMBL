@@ -1,6 +1,5 @@
 package com.wk.cmbl.activity.addcar;
 
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -12,6 +11,7 @@ import com.wk.cmbl.base.CMBLApplication;
 import com.wk.cmbl.model.CarSeriesUnit;
 
 import org.kymjs.kjframe.ui.BindView;
+import org.kymjs.kjframe.utils.PreferenceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +31,7 @@ public class ChooseSeriesActivity extends BaseActivity implements AdapterView.On
     protected void onResume() {
         super.onResume();
         CMBLApplication.getInstance().removeChooseCar(this);
+        PreferenceHelper.remove(this, "ChooseCar", "carSeries");
     }
 
     @Override
@@ -51,13 +52,6 @@ public class ChooseSeriesActivity extends BaseActivity implements AdapterView.On
     @Override
     protected void initHeader() {
         setHeaderTitle(getString(R.string.header_choose_series));
-        setOnHeaderLeftClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setResult(0);
-                finish();
-            }
-        });
     }
 
     @Override
@@ -86,16 +80,7 @@ public class ChooseSeriesActivity extends BaseActivity implements AdapterView.On
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         CMBLApplication.getInstance().addChooseCar(this);
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0
-                && event.getAction() == KeyEvent.ACTION_DOWN) {
-            setResult(0);
-            finish();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
+        PreferenceHelper.write(this, "ChooseCar", "carSeries", listData.get(position).getName());
+        showActivity(this, ChooseTypeActivity.class);
     }
 }

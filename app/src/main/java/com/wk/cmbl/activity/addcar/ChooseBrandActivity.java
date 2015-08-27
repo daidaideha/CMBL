@@ -15,6 +15,7 @@ import com.wk.cmbl.model.CarBrandUnit;
 import com.wk.cmbl.widget.MySideBar;
 
 import org.kymjs.kjframe.ui.BindView;
+import org.kymjs.kjframe.utils.PreferenceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class ChooseBrandActivity extends BaseActivity implements AdapterView.OnI
     protected void onResume() {
         super.onResume();
         CMBLApplication.getInstance().removeChooseCar(this);
+        PreferenceHelper.remove(this, "ChooseCar", "carBrand");
     }
 
     @Override
@@ -52,7 +54,7 @@ public class ChooseBrandActivity extends BaseActivity implements AdapterView.OnI
 
     @Override
     protected void initHeader() {
-        setHeaderTitle(getString(R.string.header_choose_type));
+        setHeaderTitle(getString(R.string.header_choose_brand));
         setOnHeaderLeftClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,14 +103,10 @@ public class ChooseBrandActivity extends BaseActivity implements AdapterView.OnI
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        PreferenceHelper.write(this, "ChooseCar", "carBrand", listData.get(position).getName());
         setResult(1);
         CMBLApplication.getInstance().addChooseCar(this);
-        CMBLTools.IntentToOtherForResult(this, ChooseSeriesActivity.class, null, 1);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        showActivity(this, ChooseSeriesActivity.class);
     }
 
     @Override

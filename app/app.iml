@@ -92,6 +92,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="baidumapapi_v3_5_0" level="project" />
     <orderEntry type="library" exported="" name="libammsdk" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="mta-sdk-1.6.2" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="weibosdkcore" level="project" />

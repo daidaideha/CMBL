@@ -66,7 +66,7 @@ public abstract class HttpBodyBase {
 	
 	public HttpBodyBase(Application context) {
 		// TODO Auto-generated constructor stub
-		HttpTools.setFixedInfo(this, context);
+//		HttpTools.setFixedInfo(this, context);
 	}
 
 	/***
