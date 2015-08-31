@@ -1,6 +1,7 @@
 package com.wk.cmbl.activity.addcar;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
@@ -102,7 +103,11 @@ public class AddCarActivity extends BaseActivity {
                 dialog.show();
                 break;
             case R.id.btn_save:
-
+                Intent intent = new Intent();
+                intent.putExtra("choose", choose);
+                intent.putExtra("plate", plate);
+                setResult(1, intent);
+                finish();
                 break;
             case R.id.tv_number:
                 CMBLTools.IntentToOtherForResult(this, ChoosePlateActivity.class, null, REQUEST_LETTER);
@@ -110,17 +115,20 @@ public class AddCarActivity extends BaseActivity {
         }
     }
 
+    String choose;
+    String plate;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CAR && resultCode == REQUEST_CODE) {
-            String choose = PreferenceHelper.readString(this, "ChooseCar", "carSeries") + " "
+            choose = PreferenceHelper.readString(this, "ChooseCar", "carSeries") + " "
                     + PreferenceHelper.readString(this, "ChooseCar", "carType");
             edtChoose.setText(choose);
         } else if (requestCode == REQUEST_DATE && resultCode == REQUEST_CODE) {
 
         } else if (requestCode == REQUEST_LETTER && resultCode == REQUEST_CODE) {
-            String plate = data.getStringExtra("plate");
+            plate = data.getStringExtra("plate");
             tvNumber.setText(plate);
         }
     }

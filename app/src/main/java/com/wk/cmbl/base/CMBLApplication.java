@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.wk.cmbl.model.MyCarUnit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class CMBLApplication extends Application {
      */
     private String token = "";
     private List<Activity> listChooseCar;
+    private List<MyCarUnit> listMyCar;
 
     @Override
     public void onCreate() {
@@ -28,6 +30,7 @@ public class CMBLApplication extends Application {
         SDKInitializer.initialize(this);
         application = this;
         listChooseCar = new ArrayList<>();
+        listMyCar = new ArrayList<>();
     }
 
     /***
@@ -84,5 +87,13 @@ public class CMBLApplication extends Application {
     public void finishChooseCar() {
         for (Activity activity : listChooseCar)
             activity.finish();
+    }
+
+    public List<MyCarUnit> getListMyCar() {
+        return listMyCar;
+    }
+
+    public void addMyCar(MyCarUnit unit) {
+        listMyCar.add(0, unit);
     }
 }

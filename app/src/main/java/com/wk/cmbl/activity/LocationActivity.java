@@ -2,13 +2,17 @@ package com.wk.cmbl.activity;
 
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.witalk.widget.CMBLTools;
 import com.wk.cmbl.R;
 import com.wk.cmbl.adapter.TextAdatper;
 import com.wk.cmbl.base.BaseActivity;
 import com.wk.cmbl.model.TextUnit;
+import com.wk.cmbl.widget.LocationManager;
 
 import org.kymjs.kjframe.ui.BindView;
+import org.kymjs.kjframe.utils.KJLoger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,16 +20,26 @@ import java.util.List;
 /**
  * Created by Administrator on 2015/8/25 0025.
  */
-public class LocationActivity extends BaseActivity {
+public class LocationActivity extends BaseActivity implements LocationManager.ReceiveLocationListener {
     @BindView(id = R.id.listview)
     private ListView mListView;
+    private TextView curLocation;
 
     private TextAdatper adatper;
+    private LocationManager locationManager;
 
     @Override
     public void setRootView() {
         super.setRootView();
         setMyContextView(R.layout.view_listview);
+    }
+
+    @Override
+    public void initData() {
+        super.initData();
+        locationManager = new LocationManager(this);
+        locationManager.initLocation(false);
+        locationManager.setReceiveLocationListener(this);
     }
 
     @Override
@@ -44,6 +58,7 @@ public class LocationActivity extends BaseActivity {
     @Override
     protected void initBodyer() {
         View header = getLayoutInflater().inflate(R.layout.view_location_header, null);
+        curLocation = (TextView) header.findViewById(R.id.tv_cur_location);
         mListView.addHeaderView(header);
         View footer = getLayoutInflater().inflate(R.layout.view_location_footer, null);
         mListView.addFooterView(footer);
@@ -60,5 +75,14 @@ public class LocationActivity extends BaseActivity {
         mListView.setAdapter(adatper);
         mListView.setDividerHeight(0);
 
+        curLocation.setText("正在定位中……");
+    }
+
+    @Override
+    public void onReceiveLocation() {
+        CMBLTools.toastMsg(locationManager.getCity(), this);
+        if (!CMBLTools.isValueEmpty(locationManager.getCity()))
+            curLocation.setText(locationManager.getCity());
+        KJLoger.log(this.getPackageName(), locationManager.getCity());
     }
 }

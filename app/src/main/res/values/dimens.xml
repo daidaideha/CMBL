@@ -26,4 +26,6 @@
     <dimen name="wheel_item_height">35dp</dimen>
     <dimen name="wheel_item_text">14sp</dimen>
 
+    <dimen name="dimen_homepage_top_height">299dp</dimen>
+
 </resources>

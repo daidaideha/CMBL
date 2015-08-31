@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_header_hegiht"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rl_header_message"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingRight="15dp"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:src="@drawable/message"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="@color/color_header_title"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/position"
+            android:text="杭州"
+            android:gravity="center_vertical"
+            android:drawablePadding="6dp"
+            android:paddingLeft="15dp"
+            android:textColor="@color/color_header_title" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layout_bodyer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_below="@+id/layout_header">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_homepage_bottom_hegiht"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_homepage_index"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:drawableTop="@drawable/button_index"
+                android:layout_centerInParent="true"
+                android:text="@string/tv_homepage_index"
+                android:textColor="@color/button_text"
+                android:textSize="11sp"
+                android:drawablePadding="6dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_homepage_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:drawableTop="@drawable/button_order"
+                android:layout_centerInParent="true"
+                android:text="@string/tv_homepage_order"
+                android:textColor="@color/button_text"
+                android:textSize="11sp"
+                android:drawablePadding="6dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_homepage_my"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:drawableTop="@drawable/button_my"
+                android:layout_centerInParent="true"
+                android:text="@string/tv_homepage_my"
+                android:textColor="@color/button_text"
+                android:textSize="11sp"
+                android:drawablePadding="6dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

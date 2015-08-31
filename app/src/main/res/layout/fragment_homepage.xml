@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.witalk.widget.PullToRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/pulltorefresh"
+    android:orientation="vertical">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <fragment
+                android:id="@+id/cycleviewapger"
+                android:name="com.witalk.widget.cycleviewpager.CycleViewPager"
+                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                tools:layout="@layout/view_cycle_viewpager_contet" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:id="@+id/rl_notebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/handbook_icon"
+                        android:layout_centerInParent="true"
+                        android:text="@string/tv_homepage_handbook"
+                        android:textColor="@color/color_homepage_text"
+                        android:textSize="11sp"
+                        android:drawablePadding="6dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/service_icon"
+                        android:layout_centerInParent="true"
+                        android:text="@string/tv_homepage_service"
+                        android:textColor="@color/color_homepage_text"
+                        android:textSize="11sp"
+                        android:drawablePadding="6dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/active_icon"
+                        android:layout_centerInParent="true"
+                        android:text="@string/tv_homepage_active"
+                        android:textColor="@color/color_homepage_text"
+                        android:textSize="11sp"
+                        android:drawablePadding="6dp"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/color_bg_grey" />
+
+            <RelativeLayout
+                android:id="@+id/layout_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="245dp">
+
+                <com.witalk.widget.HViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</com.witalk.widget.PullToRefreshView>

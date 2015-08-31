@@ -11,15 +11,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.witalk.widget.CMBLTools;
 import com.witalk.widget.cycleviewpager.ADInfo;
 import com.witalk.widget.cycleviewpager.CycleViewPager;
 import com.wk.cmbl.R;
 import com.wk.cmbl.activity.addcar.AddCarActivity;
+import com.wk.cmbl.widget.LocationManager;
 import com.wk.cmbl.widget.ViewFactory;
 
 import org.kymjs.kjframe.KJActivity;
 import org.kymjs.kjframe.ui.BindView;
 import org.kymjs.kjframe.ui.KJActivityStack;
+import org.kymjs.kjframe.utils.KJLoger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +30,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2015/8/6 0006.
  */
-public class HomePageActivity extends KJActivity {
+public class HomePageActivity extends KJActivity implements LocationManager.ReceiveLocationListener {
     /***
      * 侧边栏菜单布局控件
      */
@@ -62,6 +65,7 @@ public class HomePageActivity extends KJActivity {
      * 第二次按退出的时间
      */
     private long time = 0;
+    private LocationManager locationManager;
 
     @Override
     public void setRootView() {
@@ -79,6 +83,14 @@ public class HomePageActivity extends KJActivity {
         }
         cycleViewPager = (CycleViewPager) getFragmentManager()
                 .findFragmentById(R.id.cycleviewapger);
+    }
+
+    @Override
+    public void initData() {
+        super.initData();
+        locationManager = new LocationManager(this);
+        locationManager.initLocation(false);
+        locationManager.setReceiveLocationListener(this);
     }
 
     @Override
@@ -147,11 +159,6 @@ public class HomePageActivity extends KJActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0
                 && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -166,5 +173,19 @@ public class HomePageActivity extends KJActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onReceiveLocation() {
+        CMBLTools.toastMsg(locationManager.getCity(), this);
+        if (!CMBLTools.isValueEmpty(locationManager.getCity()))
+            tvLocation.setText(locationManager.getCity());
+        KJLoger.log(this.getPackageName(), locationManager.getCity());
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        locationManager.onDestroy();
     }
 }

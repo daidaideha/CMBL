@@ -52,17 +52,17 @@ public abstract class BaseActivity extends KJActivity {
 	@Override
 	public void setRootView() {
 		setContentView(R.layout.activity_base);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			Window window = getWindow();
-			// Translucent status bar
-			window.setFlags(
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//			// Translucent navigation bar
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//			Window window = getWindow();
+//			// Translucent status bar
 //			window.setFlags(
-//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
-//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-		}
+//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+////			// Translucent navigation bar
+////			window.setFlags(
+////					WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+////					WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//		}
 
 		rl_bodyer = (RelativeLayout) findViewById(R.id.rl_bodyer);
 

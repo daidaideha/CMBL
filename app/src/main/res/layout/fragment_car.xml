@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/active_icon"
+        android:layout_above="@+id/tv_number"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="浙A TY456"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/color_homepage_text"
+        android:textSize="15sp"
+        android:layout_above="@+id/tv_car"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="进口奥迪 A3 1.8L"
+        android:textColor="@color/color_homepage_text"
+        android:textSize="15sp"
+        android:layout_centerInParent="true"/>
+    
+    <Button
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="26dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_maintain"
+        android:text="立即保养"
+        android:textSize="15sp"
+        android:textColor="@color/color_homepage_text"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_car"/>
+
+</RelativeLayout>
